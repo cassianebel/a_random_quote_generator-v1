@@ -1,16 +1,9 @@
 /******************************************
-Treehouse FSJS Techdegree:
+Cassia Nebel's
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
-
-/*** 
- * `quotes` array 
-***/
-// quotes source: https://www.boredpanda.com/funny-inspirational-quotes/
+// handpicked quotes from: https://www.boredpanda.com/funny-inspirational-quotes/
 const quotes = [
   {
     quote: "Life is hard. After all, it kills you.",
@@ -18,7 +11,7 @@ const quotes = [
   },
   {
     quote: "Whatever you do, always give 100% — unless you're donating blood.",
-    source: "Bill Murray"
+    source: "Bill Murray",
   },
   {
     quote: "Worrying is like paying a debt you don't owe.",
@@ -47,18 +40,14 @@ const quotes = [
 
 
 
-/***
- * `getRandomQuote` function
-***/
+// selects a random quote from an array of quotes
 function getRandomQuote(array) {
   let randomNumber = Math.floor(Math.random() * array.length);
   return array[randomNumber];
 }
 
 
-/***
- * `printQuote` function
-***/
+// sets up the html from a random quote and replaces 'quote-box' inner html
 function printQuote() {
   let quote = getRandomQuote(quotes);
   let html = `
@@ -76,9 +65,5 @@ function printQuote() {
 }
 
 
-/***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
-***/
-
+// 'load-quote' button click - displays the next random quote
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
