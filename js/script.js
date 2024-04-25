@@ -7,23 +7,28 @@ project 1 - A Random Quote Generator
 const quotes = [
   {
     quote: "Life is hard. After all, it kills you.",
-    source: "Katharine Hepburn"
+    source: "Katharine Hepburn",
+    tag:"thoughts-on-life"
   },
   {
     quote: "Whatever you do, always give 100% — unless you're donating blood.",
     source: "Bill Murray",
+    tag: "advice"
   },
   {
     quote: "Worrying is like paying a debt you don't owe.",
-    source: "Mark Twain"
+    source: "Mark Twain",
+    tag:"thoughts-on-life"
   },
   {
     quote: "The road to success is always under construction.",
-    source: "Lily Tomlin"
+    source: "Lily Tomlin",
+    tag:"thoughts-on-life"
   },
   {
     quote: "Be happy, it drives people crazy.",
-    source: "Paulo Coelho"
+    source: "Paulo Coelho",
+    tag: "advice"
   },
   {
     quote: "I love a good nap. Sometimes it's the only thing getting me out of bed in the morning.",
@@ -34,7 +39,8 @@ const quotes = [
     quote: "Do or do not. There is no try.",
     source: "Yoda",
     citation: "Star Wars Episode V: The Empire Strikes Back",
-    year: 1980
+    year: 1980,
+    tag: "advice"
   }
 ];
 
@@ -59,6 +65,9 @@ function printQuote() {
   }
   if (quote.year) {
     html += `<span class="year">${quote.year}</span>`
+  }
+  if (quote.tag) {
+    html += `<span class="tag"> #${quote.tag}</span>`
   }
   html += `</p>`;
   document.getElementById('quote-box').innerHTML = html;
