@@ -88,3 +88,7 @@ function printQuote() {
 
 // 'load-quote' button click - displays the next random quote
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+
+
+// auto-refresh quotes
+setInterval(printQuote, 10000);
