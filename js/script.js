@@ -53,7 +53,16 @@ function getRandomQuote(array) {
 }
 
 
-// sets up the html from a random quote and replaces 'quote-box' inner html
+// provide a random color in RGB format for background-color
+function getRandomColor() {
+  let r = Math.floor(Math.random() * 256);
+  let g = Math.floor(Math.random() * 256);
+  let b = Math.floor(Math.random() * 256);
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+
+// sets up the html from a random quote and replaces 'quote-box' inner html, and changes the background-color
 function printQuote() {
   let quote = getRandomQuote(quotes);
   let html = `
@@ -71,6 +80,9 @@ function printQuote() {
   }
   html += `</p>`;
   document.getElementById('quote-box').innerHTML = html;
+
+  let color = getRandomColor();
+  document.querySelector('body').style.backgroundColor = color;
 }
 
 
