@@ -3,7 +3,10 @@ Cassia Nebel's
 project 1 - A Random Quote Generator
 ******************************************/
 
-// handpicked quotes from: https://www.boredpanda.com/funny-inspirational-quotes/
+/**
+ * an array of handpicked quotes from: 
+ * https://www.boredpanda.com/funny-inspirational-quotes/
+ */
 const quotes = [
   {
     quote: "Life is hard. After all, it kills you.",
@@ -46,14 +49,23 @@ const quotes = [
 
 
 
-// selects a random quote from an array of quotes
+/**
+ * Returns a random quote from an array of quotes.
+ *
+ * @param {array} - The array of quotes.
+ * @return {object} The random quote object from the array.
+ */
 function getRandomQuote(array) {
   let randomNumber = Math.floor(Math.random() * array.length);
   return array[randomNumber];
 }
 
 
-// provide a random color in RGB format for background-color
+/**
+ * Returns a random color.
+ *
+ * @return {string} The random color in rgb format.
+ */
 function getRandomColor() {
   let r = Math.floor(Math.random() * 256);
   let g = Math.floor(Math.random() * 256);
@@ -62,7 +74,12 @@ function getRandomColor() {
 }
 
 
-// sets up the html from a random quote and replaces 'quote-box' inner html, and changes the background-color
+/**
+ * Replaces the html of 'quote-box'
+ * to display a random quote 
+ * and replaces the body background-color
+ * with a random color. 
+ */
 function printQuote() {
   let quote = getRandomQuote(quotes);
   let html = `
@@ -86,9 +103,9 @@ function printQuote() {
 }
 
 
-// 'load-quote' button click - displays the next random quote
+/* displays the next random quote on 'load-quote' button click */
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
 
 
-// auto-refresh quotes
+/* auto-changes the quote every 10 seconds */
 setInterval(printQuote, 10000);
