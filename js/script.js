@@ -10,13 +10,50 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
+// quotes source: https://www.boredpanda.com/funny-inspirational-quotes/
+const quotes = [
+  {
+    quote: "Life is hard. After all, it kills you.",
+    source: "Katharine Hepburn"
+  },
+  {
+    quote: "Whatever you do, always give 100% — unless you're donating blood.",
+    source: "Bill Murray"
+  },
+  {
+    quote: "Worrying is like paying a debt you don't owe.",
+    source: "Mark Twain"
+  },
+  {
+    quote: "The road to success is always under construction.",
+    source: "Lily Tomlin"
+  },
+  {
+    quote: "Be happy, it drives people crazy.",
+    source: "Paulo Coelho"
+  },
+  {
+    quote: "I love a good nap. Sometimes it's the only thing getting me out of bed in the morning.",
+    source: "George Costanza",
+    citation: "Seinfeld"
+  },
+  {
+    quote: "Do or do not. There is no try.",
+    source: "Yoda",
+    citation: "Star Wars Episode V: The Empire Strikes Back",
+    year: 1980
+  }
+];
 
 
 
 /***
  * `getRandomQuote` function
 ***/
-
+function getRandomQuote(array) {
+  let randomNumber = Math.floor(Math.random() * array.length) + 1;
+  return array[randomNumber];
+}
 
 
 /***
