@@ -87,8 +87,7 @@ function printQuote() {
   let quote = getRandomQuote(quotes);
   let html = `
     <p class="quote">${quote.quote}</p>
-    <p class="source">${quote.source}
-  `;
+    <p class="source">${quote.source}`;
   if (quote.citation) {
     html += `<span class="citation">${quote.citation}</span>`
   }
