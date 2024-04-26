@@ -79,8 +79,11 @@ function getRandomColor() {
  * to display a random quote 
  * and replaces the body background-color
  * with a random color. 
+ * Also resets the interval to auto-change quotes.
  */
 function printQuote() {
+  clearInterval(interval);
+
   let quote = getRandomQuote(quotes);
   let html = `
     <p class="quote">${quote.quote}</p>
@@ -100,6 +103,8 @@ function printQuote() {
 
   let color = getRandomColor();
   document.querySelector('body').style.backgroundColor = color;
+
+  interval = setInterval(printQuote, 10000);
 }
 
 
@@ -108,4 +113,4 @@ document.getElementById('load-quote').addEventListener("click", printQuote, fals
 
 
 /* auto-changes the quote every 10 seconds */
-setInterval(printQuote, 10000);
+let interval = setInterval(printQuote, 10000);
